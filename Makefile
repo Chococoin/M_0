@@ -1,9 +1,22 @@
-$(NAME)
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-all:
+SRC_DIR = src
+
+NAME = libft.a
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
-	rm -f a.out
-fclean:
+	rm -rf $(OBJS) $(TEST_OBJS)
 
-re:
+fclean:
+	rm -rf $(OBJS) $(NAME) $(TEST_DIR)/test
+
+re: 
+	$(MAKE) fclean
+	$(MAKE) all
