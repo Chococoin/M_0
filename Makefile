@@ -1,22 +1,35 @@
+# Nombre de la biblioteca
+NAME = libft.a
+
+# Archivos fuente
+SRCS = $(wildcard *.c)
+
+# Archivos objeto
+OBJS = $(patsubst %.c, %.o, $(SRCS))
+
+# Compilador y flags
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR = src
+# Regla para compilar la biblioteca
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-NAME = libft.a
+# Regla para compilar archivos objeto
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
+# Regla para limpiar archivos objeto y la biblioteca
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+# Regla para recompilar todo
+re: fclean $(NAME)
+
+# Regla por defecto
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-
-clean:
-	rm -rf $(OBJS) $(TEST_OBJS)
-
-fclean:
-	rm -rf $(OBJS) $(NAME) $(TEST_DIR)/test
-
-re: 
-	$(MAKE) fclean
-	$(MAKE) all
+.PHONY: all clean fclean re
