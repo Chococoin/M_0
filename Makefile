@@ -24,12 +24,16 @@ clean:
 	@rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) ft_test
 
 # Regla para recompilar todo
-re: fclean $(NAME)
+re: fclean all
 
 # Regla por defecto
 all: $(NAME)
+
+# Regla para compilar ft_test
+ft_test: ft_test.o libft.a
+	$(CC) $(CFLAGS) -o ft_test ft_test.o libft.a
 
 .PHONY: all clean fclean re
