@@ -13,18 +13,18 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Regla para compilar la biblioteca
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 # Regla para compilar archivos objeto
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Regla para limpiar archivos objeto y la biblioteca
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 # Regla para recompilar todo
 re: fclean $(NAME)
