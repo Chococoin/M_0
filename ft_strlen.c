@@ -6,13 +6,15 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:13:13 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/11/21 14:14:26 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:09:22 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

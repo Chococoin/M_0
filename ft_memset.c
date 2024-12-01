@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 19:30:58 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/01 16:03:58 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:15:36 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	value = (unsigned char)c;
 	ptr = (unsigned char *)s;
-	while (--n >= 0)
+	while (n > 0)
 	{
 		*ptr = value;
+		n--;
 		ptr++;
 	}
 	return (s);
