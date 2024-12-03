@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:50:07 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/03 19:46:11 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/03 20:32:39 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*result;
 	int		i;
-	
+
 	if (s1 == NULL || set == NULL)
-		return NULL;
+		return (NULL);
 	start = ft_get_start(s1, set);
 	end = ft_get_end(s1, set, start);
 	result = (char *)malloc(sizeof(char) * (end - start + 1));
