@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 22:26:51 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/11/30 09:15:48 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/03 21:39:52 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		i = 0;
 		while (++i < n)
-		{
 			d[i] = s[i];
-		}
 	}
 	else
 	{
 		i = n;
 		while (i-- > 0)
-		{
 			d[i] = s[i];
-		}
 	}
 	return (dest);
 }
