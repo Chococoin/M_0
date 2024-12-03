@@ -6,13 +6,13 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:24:10 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/11/30 10:24:11 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/03 23:13:40 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
