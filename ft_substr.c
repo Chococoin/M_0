@@ -6,16 +6,15 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 17:40:25 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/03 11:07:02 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/03 11:11:55 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_subst(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*buffer;
 	size_t	s_len;
