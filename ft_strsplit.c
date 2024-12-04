@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:11:53 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/04 11:25:30 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/04 13:00:56 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,13 @@ static char	**ft_copy_and_paste_words(char const *s, char c, char **bffr)
 	return (bffr);
 }
 
+static void	ft_freemem(char **bffr, int j)
+{
+	while (j + 1 >= 0)
+		free(bffr[j--]);
+	free(bffr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		nwords;
@@ -74,7 +81,10 @@ char	**ft_split(char const *s, char c)
 	nwords = ft_count_words(s, c);
 	buff = (char **)malloc(sizeof(char *) * (nwords + 1));
 	if (!buff)
+	{
+		ft_freemem(buff, nwords);
 		return (NULL);
+	}
 	if (nwords == 0)
 	{
 		buff[0] = ft_strdup("");
