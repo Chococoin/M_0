@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:11:53 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/04 13:19:45 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/04 20:37:00 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,25 +94,4 @@ char	**ft_split(char const *s, char c)
 	}
 	buff = ft_copy_and_paste_words(s, c, buff);
 	return (buff);
-}
-int	main(void)
-{
-	char	**result;
-	int		i;
-
-	result = ft_split("Hello world this is a test", ' ');
-	if (!result)
-	{
-		printf("Memory allocation failed\n");
-		return (1);
-	}
-	i = 0;
-	while (result[i])
-	{
-		printf("result[%d]: %s\n", i, result[i]);
-		free(result[i]);
-		i++;
-	}
-	free(result);
-	return (0);
 }
