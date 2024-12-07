@@ -6,13 +6,10 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 15:17:00 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/04 20:26:51 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/07 23:13:56 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 #include "libft.h"
 
 static int	ft_get_num_length(int n)
