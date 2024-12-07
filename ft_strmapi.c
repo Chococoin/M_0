@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:49:03 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/04 23:38:16 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/07 15:27:36 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-static char	ft_cesar_13(unsigned int i, char c)
-{
-	(void)i;
-	if (c >= 'a' && c <= 'z')
-		return (((c - 'a' + 13) % 26) + 'a');
-	if (c >= 'A' && c <= 'Z')
-		return (((c - 'A' + 13) % 26) + 'A');
-	return (c);
-}
+// static char	ft_cesar_13(unsigned int i, char c)
+// {
+// 	(void)i;
+// 	if (c >= 'a' && c <= 'z')
+// 		return (((c - 'a' + 13) % 26) + 'a');
+// 	if (c >= 'A' && c <= 'Z')
+// 		return (((c - 'A' + 13) % 26) + 'A');
+// 	return (c);
+// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
