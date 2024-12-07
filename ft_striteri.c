@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:42:14 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/07 15:27:42 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:10:53 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@
 // }
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{	
-	unsigned int i;
+{
+	unsigned int	i;
+
 	if (!s || !f)
-		return;
-	
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{
