@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:32:37 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/07 15:45:32 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/07 15:55:25 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (fd >= 0)
+		write(fd, &c, 1);
+	else
+		return;	
 }
 
 // int main(void)
