@@ -6,20 +6,19 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:47:59 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/07 17:57:26 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/07 22:24:31 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 // #include <fcntl.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	len;
+
 	if (s == NULL || fd < 0)
 		return ;
-	
 	len = ft_strlen(s);
 	write(fd, s, len);
 }
