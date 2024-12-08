@@ -6,11 +6,11 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 22:26:51 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/03 21:39:52 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 14:46:47 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -36,3 +36,21 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// int	main(void)
+// {
+// 	char	src[50] = "This is the source string.";
+// 	char	dest_ft[50];
+// 	char	dest_std[50];
+// 	size_t	n = 20;
+
+// 	ft_memmove(dest_ft, src, n);
+// 	memmove(dest_std, src, n);
+
+// 	printf("Source: %s\n", src);
+// 	printf("ft_memmove: %s\n", dest_ft);
+// 	printf("memmove: %s\n", dest_std);
+// 	printf("Match: %s\n", (strcmp(dest_ft, dest_std) == 0) ? "Yes" : "No");
+
+// 	return (0);
+// }

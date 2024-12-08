@@ -6,14 +6,16 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:55 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/11/23 12:51:04 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:32:12 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dest, const char *src, int size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	src_len;
-	int	i;
+	size_t	src_len;
+	size_t	i;
 
 	src_len = 0;
 	i = 0;
@@ -30,3 +32,24 @@ int	ft_strlcpy(char *dest, const char *src, int size)
 	}
 	return (src_len);
 }
+
+// int	main(void)
+// {
+// 	char	src[] = "Hello, World!";
+// 	char	dest_ft[20];
+// 	char	dest_std[20];
+// 	int		size = 10;
+// 	int		result_ft;
+// 	int		result_std;
+
+// 	result_ft = ft_strlcpy(dest_ft, src, size);
+// 	result_std = ft_strlcpy(dest_std, src, size);
+
+// 	printf("Source: '%s'\n", src);
+// 	printf("Size: %d\n", size);
+// 	printf("ft_strlcpy: '%s', Return: %d\n", dest_ft, result_ft);
+// 	printf("strlcpy: '%s', Return: %d\n", dest_std, result_std);
+// 	printf("Match: %s\n", (result_ft == result_std && 
+// strcmp(dest_ft, dest_std) == 0) ? "Yes" : "No");
+// 	return (0);
+// }

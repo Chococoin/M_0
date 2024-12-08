@@ -6,13 +6,11 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:49:03 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/07 15:27:36 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:33:40 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 // static char	ft_cesar_13(unsigned int i, char c)
 // {

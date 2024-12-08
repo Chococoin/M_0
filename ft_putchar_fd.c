@@ -6,11 +6,11 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 15:32:37 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/07 17:56:50 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 16:31:14 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

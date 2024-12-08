@@ -6,13 +6,11 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:11:53 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/04 20:37:00 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 17:42:40 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_count_words(char const *s, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 13:50:07 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 17:50:41 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 18:36:15 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,25 +69,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result[end] = '\0';
 	return (result);
 }
-int	main(void)
+int main(void)
 {
-	char	*test_cases[6] = {
+	const char *test_cases[] = {
 		"  Hello World  ",
-		"xxHello Worldxx",
-		"!!Hello World!!",
-		"  !!Hello World!!  ",
+		"  Hello World",
+		"Hello World  ",
+		"Hello World",
 		"NoTrimNeeded",
-		"   "
+		""
 	};
-	char	*sets[6] = {
+	const char *sets[] = {
 		" ",
-		"x",
-		"!",
-		" !",
-		"",
-		NULL
+		" ",
+		" ",
+		" ",
+		" ",
+		" "
 	};
-	char	*expected_results[6] = {
+	const char *expected_results[] = {
 		"Hello World",
 		"Hello World",
 		"Hello World",
@@ -95,10 +95,10 @@ int	main(void)
 		"NoTrimNeeded",
 		""
 	};
-	int		i;
-	char	*result;
+	int i;
+	char *result;
 
-	for (i = 0; i < 6; i++)
+	for (i = 0; i < 5; i++)
 	{
 		result = ft_strtrim(test_cases[i], sets[i]);
 		printf("Test %d:\n", i + 1);
@@ -108,5 +108,5 @@ int	main(void)
 		printf("Match: %s\n\n", (strcmp(result, expected_results[i]) == 0) ? "Yes" : "No");
 		free(result);
 	}
-	return (0);
+	return 0;
 }

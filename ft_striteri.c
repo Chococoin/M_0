@@ -6,17 +6,15 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:42:14 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/07 16:10:53 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 16:42:37 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 // static void	ft_cesar_13(unsigned int i, char *c)
 // {
-// 	(void)i; // Para evitar la advertencia de variable no utilizada
+// 	(void)i; // Avoid warning for variable not used 
 // 	if (*c >= 'a' && *c <= 'z')
 // 	{
 // 		*c = (((*c - 'a' + 13) % 26) + 'a');
