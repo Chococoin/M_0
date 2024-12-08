@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:11:53 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 17:42:40 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:08:38 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,80 +16,131 @@ static int	ft_count_words(char const *s, char c)
 {
 	int	nwords;
 	int	isword;
-	int	i;
-	int	len;
 
-	len = ft_strlen(s);
 	nwords = 0;
 	isword = 0;
-	i = 0;
-	while (i < len)
+	while (*s)
 	{
-		if (s[i] != c && !isword)
+		if (*s != c && !isword)
 		{
 			isword = 1;
 			nwords++;
 		}
-		if (s[i] == c && isword)
+		else if (*s == c && isword)
 			isword = 0;
-		i++;
+		s++;
 	}
 	return (nwords);
 }
 
-static char	**ft_copy_and_paste_words(char const *s, char c, char **bffr)
+static char	*ft_strndup(const char *s, size_t n)
 {
-	int		i;
-	int		j;
-	int		start;
+	char	*dup;
 
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		start = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > start)
-		{
-			bffr[j] = ft_strdup(&s[start]);
-			if (!bffr[j])
-				return (NULL);
-			bffr[j][i - start] = '\0';
-			j++;
-		}
-	}
-	bffr[j] = NULL;
+	dup = malloc(n + 1);
+	if (!dup)
+		return (NULL);
+	ft_memcpy(dup, s, n);
+	dup[n] = '\0';
+	return (dup);
+}
+
+static char	**ft_allocate_buffer(int nwords)
+{
+	char	**bffr;
+
+	bffr = malloc(sizeof(char *) * (nwords + 1));
+	if (!bffr)
+		return (NULL);
+	bffr[nwords] = NULL;
 	return (bffr);
 }
 
-static void	ft_freemem(char **bffr, int j)
+static void	ft_free_buffer(char **bffr, int i)
 {
-	while (j + 1 >= 0)
-		free(bffr[j--]);
+	while (i > 0)
+		free(bffr[--i]);
 	free(bffr);
+}
+
+static char	**ft_fill_buffer(char const *s, char c, char **bffr)
+{
+	int			i;
+	const char	*start;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			start = s;
+			while (*s && *s != c)
+				s++;
+			bffr[i] = ft_strndup(start, s - start);
+			if (!bffr[i])
+			{
+				ft_free_buffer(bffr, i);
+				return (NULL);
+			}
+			i++;
+		}
+	}
+	return (bffr);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		nwords;
-	char	**buff;
+	char	**bffr;
 
-	nwords = ft_count_words(s, c);
-	buff = (char **)malloc(sizeof(char *) * (nwords + 1));
-	if (!buff)
-	{
-		ft_freemem(buff, nwords);
+	if (!s)
 		return (NULL);
-	}
-	if (nwords == 0)
-	{
-		buff[0] = ft_strdup("");
-		buff[1] = NULL;
-		return (buff);
-	}
-	buff = ft_copy_and_paste_words(s, c, buff);
-	return (buff);
+	nwords = ft_count_words(s, c);
+	bffr = ft_allocate_buffer(nwords);
+	if (!bffr)
+		return (NULL);
+	if (!ft_fill_buffer(s, c, bffr))
+		return (NULL);
+	return (bffr);
 }
+
+// int	main(void)
+// {
+// 	char	*test_strs[] = {
+// 		"Hello world this is a test",
+// 		",,Another,,,test,string,with,commas,,,",
+// 		"   Leading and trailing spaces   ",
+// 		"SingleWord",
+// 		"",
+// 		"   ",
+// 		"Multiple   spaces   between   words",
+// 		NULL
+// 	};
+// 	char	delimiters[] = {' ', ',', ' ', ' ', ' ', ' ', ' '};
+// 	int		i;
+// 	char	**result;
+// 	int		j;
+
+// 	for (i = 0; test_strs[i] != NULL; i++)
+// 	{
+// 		printf("Test %d: String \"%s\" with delimiter '%c'\n", i + 1, test_strs[i], delimiters[i]);
+// 		result = ft_split(test_strs[i], delimiters[i]);
+// 		if (result)
+// 		{
+// 			for (j = 0; result[j] != NULL; j++)
+// 			{
+// 				printf("result[%d]: \"%s\"\n", j, result[j]);
+// 				free(result[j]);
+// 			}
+// 			free(result);
+// 		}
+// 		else
+// 		{
+// 			printf("Error: ft_split returned NULL\n");
+// 		}
+// 		printf("\n");
+// 	}
+// 	return (0);
+// }
