@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:07:38 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 17:39:13 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:28:04 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 // 	result_ft = ft_strnstr(big, little, len);
 // 	result_std = ft_strnstr(big, little, len);
-// 	printf("Test 1: Searching '%s' in '%s' within first %zu characters\n", little, big, len);
+// 	printf("Test 1: Searching '%s' in '%s' within first %zu characters\n",
+// little, big, len);
 // 	printf("ft_strnstr: %s\n", result_ft);
 // 	printf("strnstr: %s\n", result_std);
 // 	printf("Match: %s\n\n", (result_ft == result_std) ? "Yes" : "No");
 
 // 	result_ft = ft_strnstr(big, little_not_found, len);
 // 	result_std = ft_strnstr(big, little_not_found, len);
-// 	printf("Test 2: Searching '%s' in '%s' within first %zu characters\n", little_not_found, big, len);
+// 	printf("Test 2: Searching '%s' in '%s' within first %zu characters\n", 
+// little_not_found, big, len);
 // 	printf("ft_strnstr: %s\n", result_ft);
 // 	printf("strnstr: %s\n", result_std);
 // 	printf("Match: %s\n\n", (result_ft == result_std) ? "Yes" : "No");

@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:09:34 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 17:22:20 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:28:22 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 // 	printf("ft_strlcat: %s, return: %ld\n", dest1, result_ft);
 // 	printf("strlcat: %s, return: %ld\n", dest2, result_std);
-// 	printf("Match: %s\n", (result_ft == result_std && strcmp(dest1, dest2) == 0) ? "Yes" : "No");
+// 	printf("Match: %s\n", (result_ft == result_std && strcmp(dest1, dest2)
+// == 0) ? "Yes" : "No");
 
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:45:08 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 16:25:17 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:30:12 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	str[12];
-	int		i = 0;
+	int		i;
 
+	i = 0;
 	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putchar_fd('2', fd);
-		n = 147483648; 
+		n = 147483648;
 	}
 	if (n == 0)
 		ft_putchar_fd('0', fd);
@@ -38,7 +39,9 @@ void	ft_putnbr_fd(int n, int fd)
 	while (--i >= 0)
 		ft_putchar_fd(str[i], fd);
 }
-// void	run_test(int n, const char *expected_output, const char *test_output_file) 
+
+// void	run_test(int n, const char *expected_output,
+// const char *test_output_file) 
 // {
 // 	int fd = open(test_output_file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 // 	if (fd == -1)
@@ -66,7 +69,8 @@ void	ft_putnbr_fd(int n, int fd)
 // 	if (strcmp(buffer, expected_output) == 0)
 // 		printf("Test passed\n");
 // 	else
-// 		printf("Test failed\nExpected: %s\nGot: %s\n", expected_output, buffer);
+// 		printf("Test failed\nExpected: %s\nGot: %s\n", 
+// expected_output, buffer);
 // }
 
 // int main()

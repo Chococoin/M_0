@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:53:57 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 16:40:09 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:25:39 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ char	*ft_strdup(const char *s)
 // 		printf("Test %d: String \"%s\"\n", i + 1, s);
 // 		printf("ft_strdup: \"%s\"\n", result_ft);
 // 		printf("strdup: \"%s\"\n", result_std);
-// 		printf("Match: %s\n\n", (strcmp(result_ft, result_std) == 0) ? "Yes" : "No");
+// 		printf("Match: %s\n\n", (strcmp(result_ft, result_std) == 0) ? 
+// "Yes" : "No");
 
 // 		free(result_ft);
 // 		free(result_std);
