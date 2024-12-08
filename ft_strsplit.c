@@ -6,16 +6,16 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 20:11:53 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 19:08:38 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/08 19:17:52 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static int	ft_count_words_and_allocate(char const *s, char c, char ***bffr)
 {
-	int	nwords;
-	int	isword;
+	int			nwords;
+	int			isword;
 
 	nwords = 0;
 	isword = 0;
@@ -30,12 +30,16 @@ static int	ft_count_words(char const *s, char c)
 			isword = 0;
 		s++;
 	}
+	*bffr = malloc(sizeof(char *) * (nwords + 1));
+	if (!*bffr)
+		return (-1);
+	(*bffr)[nwords] = NULL;
 	return (nwords);
 }
 
 static char	*ft_strndup(const char *s, size_t n)
 {
-	char	*dup;
+	char		*dup;
 
 	dup = malloc(n + 1);
 	if (!dup)
@@ -43,17 +47,6 @@ static char	*ft_strndup(const char *s, size_t n)
 	ft_memcpy(dup, s, n);
 	dup[n] = '\0';
 	return (dup);
-}
-
-static char	**ft_allocate_buffer(int nwords)
-{
-	char	**bffr;
-
-	bffr = malloc(sizeof(char *) * (nwords + 1));
-	if (!bffr)
-		return (NULL);
-	bffr[nwords] = NULL;
-	return (bffr);
 }
 
 static void	ft_free_buffer(char **bffr, int i)
@@ -92,14 +85,13 @@ static char	**ft_fill_buffer(char const *s, char c, char **bffr)
 
 char	**ft_split(char const *s, char c)
 {
-	int		nwords;
-	char	**bffr;
+	int			nwords;
+	char		**bffr;
 
 	if (!s)
 		return (NULL);
-	nwords = ft_count_words(s, c);
-	bffr = ft_allocate_buffer(nwords);
-	if (!bffr)
+	nwords = ft_count_words_and_allocate(s, c, &bffr);
+	if (nwords == -1 || !bffr)
 		return (NULL);
 	if (!ft_fill_buffer(s, c, bffr))
 		return (NULL);
@@ -125,7 +117,8 @@ char	**ft_split(char const *s, char c)
 
 // 	for (i = 0; test_strs[i] != NULL; i++)
 // 	{
-// 		printf("Test %d: String \"%s\" with delimiter '%c'\n", i + 1, test_strs[i], delimiters[i]);
+// 		printf("Test %d: String \"%s\" with delimiter '%c'\n", i + 
+// 1, test_strs[i], delimiters[i]);
 // 		result = ft_split(test_strs[i], delimiters[i]);
 // 		if (result)
 // 		{
