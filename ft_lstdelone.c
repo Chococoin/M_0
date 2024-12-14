@@ -6,16 +6,11 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:06:57 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/14 17:48:32 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:29:59 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static void	ft_del(void *content)
-// {
-// 	free(content);
-// }
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
@@ -24,6 +19,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del(lst->content);
 	free(lst);
 }
+
+// static void	ft_del(void *content)
+// {
+// 	free(content);
+// }
 
 // int	main(void)
 // {
