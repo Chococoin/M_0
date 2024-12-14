@@ -1,39 +1,33 @@
-# Nombre de la biblioteca
 NAME = libft.a
 
-# Archivos fuente
-SRCS = $(wildcard *.c)
+MAIN_SRCS = $(filter-out ft_lst%.c, $(wildcard *.c))
 
-# Archivos objeto
-OBJS = $(patsubst %.c, %.o, $(SRCS))
+BONUS_SRCS = $(wildcard ft_lst*.c)
 
-# Compilador y flags
+OBJS = $(patsubst %.c, %.o, $(MAIN_SRCS))
+
+BONUS_OBJS = $(patsubst %.c, %.o, $(BONUS_SRCS))
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-# Regla para compilar la biblioteca
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-# Regla para compilar archivos objeto
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-# Regla para limpiar archivos objeto y la biblioteca
-clean:
-	@rm -f $(OBJS)
-
-fclean: clean
-	@rm -f $(NAME) ft_test
-
-# Regla para recompilar todo
-re: fclean all
-
-# Regla por defecto
 all: $(NAME)
 
-# Regla para compilar ft_test
-ft_test: ft_test.o libft.a
-	$(CC) $(CFLAGS) -o ft_test ft_test.o libft.a
+bonus: $(BONUS_OBJS)
+	@ar rcs $(NAME) $(BONUS_OBJS)
+
+clean:
+	@rm -f $(OBJS) $(BONUS_OBJS)
+
+fclean: clean
+	@rm -f $(NAME)
+
+re: fclean all
 
 .PHONY: all clean fclean re
