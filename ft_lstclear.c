@@ -6,16 +6,11 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 16:25:22 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/14 16:54:36 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/14 19:54:05 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static void	ft_del(void *content)
-// {
-// 	free(content);
-// }
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
@@ -32,6 +27,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	*lst = NULL;
 }
+
+// static void	ft_del(void *content)
+// {
+// 	free(content);
+// }
 
 // int	main(void)
 // {
