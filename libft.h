@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:41:15 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/14 18:50:11 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/14 20:51:29 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 # include <stdint.h>
 # include <ctype.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
+	void			*content;
+	struct s_list	*next;
 }	t_list;
 
 size_t	ft_strlen(const char *s);
