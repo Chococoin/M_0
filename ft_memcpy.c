@@ -6,7 +6,7 @@
 /*   By: glugo-mu <glugo-mu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 19:51:12 by glugo-mu          #+#    #+#             */
-/*   Updated: 2024/12/08 14:44:08 by glugo-mu         ###   ########.fr       */
+/*   Updated: 2024/12/15 16:40:24 by glugo-mu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*s;
 	size_t		i;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	s = (const char *)src;
 	d = (char *)dest;
